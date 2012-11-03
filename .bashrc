@@ -6,7 +6,7 @@ function parse_git_branch {
 }
 
 # prompt
-export PS1="\[\033[1;34m\]\t \[\033[0;31m\]\u\[\033[0m\]@\[\033[32m\]\H \[\033[1;32m\]\w$(parse_git_branch) \[\033[1;37m\]# \[\033[0m\] "
+export PS1="\[\033[1;34m\]\t \[\033[0;31m\]\u\[\033[0m\]@\[\033[32m\]\H \[\033[1;32m\]\w\$(parse_git_branch) \[\033[1;37m\]# \[\033[0m\] "
 
 shopt -s cdspell
 shopt -s checkwinsize
