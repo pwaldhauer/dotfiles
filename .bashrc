@@ -1,6 +1,13 @@
 #only execute in interactive mode
 [ -z "$PS1" ] && return
 
+function parse_git_branch {
+	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
+}
+
+# prompt
+export PS1="\[\033[1;34m\]\t \[\033[0;31m\]\u\[\033[0m\]@\[\033[32m\]\H \[\033[1;32m\]\w$(parse_git_branch) \[\033[1;37m\]# \[\033[0m\] "
+
 shopt -s cdspell
 shopt -s checkwinsize
 
@@ -28,7 +35,3 @@ export HISTCONTROL=ignoreboth
 export HISTSIZE=10000
 export EDITOR="vim"
 
-# prompt
-GITBRANCH=`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`
-
-export PS1="\[\033[1;34m\]\t \[\033[0;31m\]\u\[\033[0m\]@\[\033[32m\]\H \[\033[1;32m\]\w$GITBRANCH \[\033[1;37m\]# \[\033[0m\] "
