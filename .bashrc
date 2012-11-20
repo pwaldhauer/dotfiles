@@ -30,6 +30,9 @@ alias halt='echo Nein, Idiot'
 alias qq='cd /var/www/quotefm'
 alias qqa='cd /var/www/quotefm/protected/modules/api'
 
+# aliases: awesome
+alias please='sudo'
+
 # exports
 export HISTCONTROL=ignoreboth
 export HISTSIZE=10000
