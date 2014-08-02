@@ -6,6 +6,10 @@ function parse_git_branch {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
 }
 
+function backup_photos {
+    rsync --exclude "Lightroom 5 Catalog Previews*" -aPr /Users/pwaldhauer/Pictures/Raw/ /Volumes/Data/Fotos/2014
+}
+
 export PROJECT_DIRECTORY="/Users/pwaldhauer/Dropbox/dev/Tests/"
 
 function spawn_project {
@@ -98,6 +102,9 @@ alias halt='echo Nein, Idiot'
 
 alias wow='git status'
 alias such='git'
+
+alias sshconfig='subl ~/.ssh/config'
+alias irc='ssh -t buffy "screen -r irssi"'
 
 
 # aliases: awesome
