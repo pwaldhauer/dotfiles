@@ -7,10 +7,10 @@ function parse_git_branch {
 }
 
 function backup_photos {
-    rsync --exclude "Lightroom 5 Catalog Previews*" -aPr /Users/pwaldhauer/Pictures/Raw/ /Volumes/Data/Fotos/2014
+    rsync --exclude "Lightroom 5 Catalog Previews*" -aPr /Users/pwaldhauer/Pictures/Raw/ /Volumes/Data/Fotos/
 }
 
-export PROJECT_DIRECTORY="/Users/pwaldhauer/Dropbox/dev/Tests/"
+export PROJECT_DIRECTORY="/Users/pwaldhauer/Dropbox/dev/private/_Tests/"
 
 function spawn_project {
     if [ -z $2 ]
